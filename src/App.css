@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(253, 236, 187);
+  background-color: rgb(170, 166, 155);
 }
 
 .App {
@@ -41,4 +41,13 @@ ul {
 button {
   padding: 12px;
   margin: 4px;
+}
+.mandy {
+ display: flex; 
+ justify-content: center;
+ gap: 20%
+ 
+}
+.btn {
+  cursor: pointer;
 }

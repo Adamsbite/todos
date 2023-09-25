@@ -6,6 +6,10 @@ export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [editId, setEditId] = useState(null);
   const [inputValue, setInputValue] = useState("");
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [isUncompleted, setIsUncompleted] = useState (false);
+  const [isAll, setIsAll] = useState (true);
+
 
   useEffect(() => {
     let canceled = false;
@@ -52,6 +56,26 @@ export const TodoProvider = ({ children }) => {
     setInputValue("");
   };
 
+
+  const handleCompleted = () => {
+    // alert(123);
+    setIsAll(false);
+    setIsCompleted(true);
+    setIsUncompleted (false)
+  }
+  const handleUncompleted = () => {
+    // alert(123);
+    setIsAll(false);
+    setIsCompleted(false);
+    setIsUncompleted (true)
+  }
+  const handleAll = () => {
+    // alert(123);
+    setIsAll(true);
+    setIsCompleted(false);
+    setIsUncompleted (false)
+  }
+
   return (
     <TodoContext.Provider
       value={{
@@ -65,9 +89,16 @@ export const TodoProvider = ({ children }) => {
         handleDelete,
         handleCheck,
         handleEdit,
+        isCompleted,
+        isUncompleted,
+        isAll,
+        handleAll,
+        handleCompleted,
+        handleUncompleted
       }}
     >
       {children}
     </TodoContext.Provider>
   );
+
 };

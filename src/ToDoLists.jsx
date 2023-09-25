@@ -1,5 +1,5 @@
 import TodoItem from "./ToDoItem";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { TodoContext } from "./Contexts/ToDoContext";
 
 const TodoLists = () => {
@@ -13,3 +13,4 @@ const TodoLists = () => {
 };
 
 export default TodoLists;
+
